@@ -1,6 +1,7 @@
 # Shortify: High-Throughput Distributed URL Router
 
-![Language](https://img.shields.io/badge/language-Node.js-green)
+![Express.js](https://img.shields.io/badge/Express.js-green)
+![Node.js](https://img.shields.io/badge/Node.js-green)
 ![Database](https://img.shields.io/badge/database-PostgreSQL%20%7C%20Redis-blue)
 ![Architecture](https://img.shields.io/badge/architecture-Distributed%20System-success)
 ![Hosting](https://img.shields.io/badge/hosting-AWS%20EC2%20%7C%20S3-orange)
