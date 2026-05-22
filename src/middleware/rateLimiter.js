@@ -6,8 +6,8 @@ export const tokenBucketLimiter = async (req, res, next) => {
     const key = `rate:token:${ip}`;
 
     // Configuration
-    const capacity = 3;       // Max burst of 5 requests at once
-    const refillRate = 0.1;     // Refill 1 token per second
+    const capacity = 5;       // Max burst of 5 requests at once
+    const refillRate = 1;     // Refill 1 token per second
     const windowSec = 60;     // Clean up Redis memory after 60 seconds of inactivity
 
     try {

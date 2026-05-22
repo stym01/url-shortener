@@ -8,6 +8,6 @@ const router = express.Router();
 router.post('/shorten', tokenBucketLimiter, createShortUrl);
 
 // Limit URL redirects
-router.get('/:shortCode', tokenBucketLimiter, redirectUrl);
+router.get('/:shortCode', tokenBucketLimiter, redirectUrl); //temp remove ratelimiter to tesst k6
 
 export default router;
