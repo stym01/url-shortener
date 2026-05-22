@@ -1,0 +1,26 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to AWS EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            # Navigate to the project folder (ensure this matches your repo name exactly)
+            cd ~/Distributed-url-shortener-with-multi-layer-caching-and-rate-limiting
+            
+            # Pull the latest code
+            git pull origin main
+            
+            # Rebuild and restart the containers silently
+            docker-compose up -d --build
