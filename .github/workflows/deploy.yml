@@ -21,7 +21,8 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
-          # 2. Pass those variables into the SSH script
+          # 2. Pass those variables into the SSH script 
+          
           envs: PORT,BASE_URL,DATABASE_URL,REDIS_URL
           script: |
             cd ~/Distributed-url-shortener-with-multi-layer-caching-and-rate-limiting
