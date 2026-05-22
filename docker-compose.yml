@@ -5,12 +5,9 @@ services:
     build: .
     ports:
       - "3000:3000"
-    environment:
-      - PORT=3000
-      - BASE_URL=http://localhost:3000
-      # Notice we use the service names 'postgres' and 'redis' instead of 'localhost'
-      - DATABASE_URL=postgres://postgres:rootpassword@postgres:5432/shortify
-      - REDIS_URL=redis://redis:6379
+    # This tells Docker to load variables from your server's .env file!
+    env_file:
+      - .env
     depends_on:
       - postgres
       - redis
